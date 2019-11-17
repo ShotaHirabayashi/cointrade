@@ -4,8 +4,6 @@ from django.views.generic import TemplateView
 import requests
 import json
 import datetime
-#python_bitbankccのパッケージをインポート
-import python_bitbankcc
 
 class IndexTemplateView(TemplateView):
     template_name = 'index.html'

@@ -40,19 +40,6 @@ def coinfunc(request):
         data = ("%-9s : %-10.9s " % (key, item))
         coinList.append(data)
 
-
-
-
-    #bitbank
-    #public API classのオブジェクトを取得
-    pub = python_bitbankcc.public()
-    #仮想通貨のペアを指定、指定できるペアは以下の通り
-    #btc_jpy, xrp_jpy, ltc_btc, eth_btc, mona_jpy, mona_btc, bcc_jpy, bcc_btc
-    pair = 'btc_jpy'
-    #ティッカー情報を取得
-    ticker = pub.get_ticker(pair)
-
-
     #zaif
     URL = 'https://api.zaif.jp/api/1/ticker/btc_jpy'
     zaif = requests.get(URL).json()
@@ -65,7 +52,6 @@ def coinfunc(request):
     #context
     context = {
     'coinList': coinList,
-    'bitbank':ticker,
     'zaif': zaifList,
     }
 
